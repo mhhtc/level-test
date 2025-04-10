@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">My Application test</string>
+    <string name="app_name">My Application Test</string>
+    <string name="holder_text">Introduce la frase que quieras analizar</string>
+    <string name="button_action">Analizar frase</string>
+    <string name="title_detail_screen">Pantalla detalle</string>
+    <string name="text_result">La palabra más larga de la frase \'%1$s\' es %2$s</string>
 </resources>

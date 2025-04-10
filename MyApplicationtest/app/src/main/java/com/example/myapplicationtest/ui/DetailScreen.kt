@@ -15,7 +15,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.example.myapplicationtest.getWordFromString
+import androidx.compose.ui.res.stringResource
+import com.example.myapplicationtest.R
+import com.example.myapplicationtest.utils.getWordFromString
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -24,7 +26,7 @@ fun DetailScreen(message: String, navigateBack: () -> Unit) {
     Scaffold(modifier = Modifier.fillMaxSize(),
         topBar = {
             CenterAlignedTopAppBar(
-                title = { Text(text = "Pantalla detalle") },
+                title = { Text(text = stringResource(R.string.title_detail_screen)) },
                 navigationIcon = {
                     IconButton(onClick = { navigateBack() }) {
                         Icon(
@@ -37,10 +39,12 @@ fun DetailScreen(message: String, navigateBack: () -> Unit) {
         }
     ) { innerPadding ->
         Column(
-            modifier = Modifier.fillMaxSize().padding(innerPadding),
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding),
             horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center
         ) {
-            Text(text = "La palabra más larga de la frase '$message' es ${getWordFromString(message)}")
+            Text(text = stringResource(R.string.text_result, message, getWordFromString(message)))
         }
     }
 

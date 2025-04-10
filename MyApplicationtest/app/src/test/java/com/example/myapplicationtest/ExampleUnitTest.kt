@@ -1,5 +1,6 @@
 package com.example.myapplicationtest
 
+import com.example.myapplicationtest.utils.getWordFromString
 import org.junit.Test
 
 import org.junit.Assert.*

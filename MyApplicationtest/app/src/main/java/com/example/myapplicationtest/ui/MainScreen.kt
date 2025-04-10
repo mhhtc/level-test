@@ -18,7 +18,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.example.myapplicationtest.R
 
 @Composable
 fun MainScreen(navigateToDetail:(String) -> Unit) {
@@ -28,14 +30,17 @@ fun MainScreen(navigateToDetail:(String) -> Unit) {
         TextField(
             value = message,
             onValueChange = { message = it },
-            label = { Text(text = "Introduce la frase que quieras analizar") },
+            label = { Text(text = stringResource(R.string.holder_text)) },
             minLines = 3,
             maxLines = 3,
-            modifier = Modifier.fillMaxWidth().wrapContentHeight().padding(16.dp)
+            modifier = Modifier
+                .fillMaxWidth()
+                .wrapContentHeight()
+                .padding(16.dp)
         )
         Spacer(modifier = Modifier.height(20.dp))
         Button(onClick = { navigateToDetail(message) }) {
-            Text(text = "Analizar frase")
+            Text(text = stringResource(R.string.button_action))
         }
     }
 }

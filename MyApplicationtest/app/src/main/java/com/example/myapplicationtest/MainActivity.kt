@@ -20,7 +20,3 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
-fun getWordFromString(text: String): String {
-    return text.split(" ").maxBy { it.length }
-}
