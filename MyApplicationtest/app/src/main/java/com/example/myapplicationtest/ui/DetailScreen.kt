@@ -16,6 +16,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import com.example.myapplicationtest.R
 import com.example.myapplicationtest.utils.getWordFromString
 
@@ -48,4 +49,10 @@ fun DetailScreen(message: String, navigateBack: () -> Unit) {
         }
     }
 
+}
+
+@Composable
+@Preview(showBackground = true)
+fun DetailScreenPreview() {
+    DetailScreen(message = "Hello World", navigateBack = {})
 }
